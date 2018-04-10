@@ -9,6 +9,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -29,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    static int NEW_PLACE=333;
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -46,6 +49,8 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.new_place_item:
                 Toast.makeText(this,"New place!",Toast.LENGTH_SHORT).show();
+                Intent intent2 = new Intent(this, EditMyPlaceActivity.class);
+                startActivityForResult(intent2,NEW_PLACE);
                 return true;
 
             case R.id.show_map_item:
@@ -57,5 +62,13 @@ public class MainActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
 
         }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(resultCode==RESULT_OK && requestCode==NEW_PLACE)
+            Toast.makeText(this,"New place added",Toast.LENGTH_SHORT).show();
     }
 }

@@ -1,7 +1,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".MyPlacesList">
+    tools:context=".EditMyPlaceActivity">
 
     <item
         android:id="@+id/show_map_item"
@@ -11,10 +11,10 @@
         app:showAsAction="ifRoom"/>
 
     <item
-        android:id="@+id/new_place_item"
+        android:id="@+id/my_places_list_item"
         android:orderInCategory="100"
-        android:title="@string/new_place"
-        android:icon="@drawable/ic_action_new"
+        android:icon="@drawable/ic_action_view_as_list"
+        android:title="@string/my_places_list"
         app:showAsAction="ifRoom"/>
 
     <item

@@ -19,9 +19,9 @@
         <activity
             android:name=".AboutActivity"
             android:theme="@style/Theme.AppCompat.Light.Dialog" />
-        <activity android:name=".MyPlacesList">
-
-        </activity>
+        <activity android:name=".MyPlacesList" />
+        <activity android:name=".EditMyPlaceActivity" />
+        <activity android:name=".ViewMyPlaceActivity"></activity>
     </application>
 
 </manifest>
