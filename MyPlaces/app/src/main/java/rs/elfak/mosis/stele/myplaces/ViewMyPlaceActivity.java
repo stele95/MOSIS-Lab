@@ -23,9 +23,13 @@ public class ViewMyPlaceActivity extends AppCompatActivity {
             MyPlace place = MyPlacesData.getInstance().getPlace(position);
             TextView name = findViewById(R.id.name_text);
             TextView desc = findViewById(R.id.description_text);
+            TextView lat = findViewById(R.id.latitude_text);
+            TextView lon = findViewById(R.id.longitude_text);
 
             name.setText(place.getName());
             desc.setText(place.getDescription());
+            lat.setText(place.getLatitude());
+            lon.setText(place.getLongitude());
         }
 
         Button btnOK = findViewById(R.id.view_ok_button);

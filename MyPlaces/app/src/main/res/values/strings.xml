@@ -11,4 +11,7 @@
     <string name="edit_name_label">Name:</string>
     <string name="edit_desc_label">Description:</string>
     <string name="edit_button_cancel">Cancel</string>
+    <string name="edit_long_label">Longitude:</string>
+    <string name="edit_lat_label">Latitude:</string>
+    <string name="edit_location_label">Get location</string>
 </resources>

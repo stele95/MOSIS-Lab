@@ -3,6 +3,7 @@
     package="rs.elfak.mosis.stele.myplaces">
 
     <application
+        android:name=".Classes.MyPlacesApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"

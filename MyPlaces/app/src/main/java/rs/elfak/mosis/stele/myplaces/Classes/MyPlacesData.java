@@ -6,15 +6,15 @@ public class MyPlacesData {
 
     private ArrayList<MyPlace> myPlaces;
 
+    MyPlacesDBAdapter dbAdapter;
+
     public MyPlacesData() {
         myPlaces=new ArrayList<>();
 
-        myPlaces.add(new MyPlace("Place A", ""));
-        myPlaces.add(new MyPlace("Place B", ""));
-        myPlaces.add(new MyPlace("Place C", ""));
-        myPlaces.add(new MyPlace("Place D", ""));
-        myPlaces.add(new MyPlace("Place E", ""));
-        myPlaces.add(new MyPlace("Place F", ""));
+        dbAdapter = new MyPlacesDBAdapter(MyPlacesApplication.getContext());
+        dbAdapter.open();
+        this.myPlaces=dbAdapter.getAllEntries();
+        dbAdapter.close();
     }
 
     private static class SingletonHolder{
@@ -31,6 +31,10 @@ public class MyPlacesData {
 
     public void addNewPlace(MyPlace place){
         myPlaces.add(place);
+        dbAdapter.open();
+        long ID = dbAdapter.insertEntry(place);
+        dbAdapter.close();
+        place.setId(ID);
     }
 
     public MyPlace getPlace(int index)
@@ -39,6 +43,17 @@ public class MyPlacesData {
     }
 
     public void deletePlace(int index){
-        myPlaces.remove(index);
+        MyPlace place = myPlaces.remove(index);
+        dbAdapter.open();
+        boolean success = dbAdapter.removeEntry(place.getId());
+        dbAdapter.close();
     }
+
+    public void updatePlace(MyPlace place)
+    {
+        dbAdapter.open();
+        dbAdapter.updateEntry(place.getId(), place);
+        dbAdapter.close();
+    }
+
 }
