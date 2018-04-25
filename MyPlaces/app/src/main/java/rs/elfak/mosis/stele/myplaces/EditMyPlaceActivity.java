@@ -1,6 +1,5 @@
 package rs.elfak.mosis.stele.myplaces;
 
-import android.app.Instrumentation;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,8 +13,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import rs.elfak.mosis.stele.myplaces.Classes.MyPlace;
-import rs.elfak.mosis.stele.myplaces.Classes.MyPlacesData;
+import rs.elfak.mosis.stele.myplaces.classes.MyPlace;
+import rs.elfak.mosis.stele.myplaces.classes.MyPlacesData;
 
 public class EditMyPlaceActivity extends AppCompatActivity implements View.OnClickListener{
 

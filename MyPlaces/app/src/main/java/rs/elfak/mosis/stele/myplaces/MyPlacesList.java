@@ -1,10 +1,8 @@
 package rs.elfak.mosis.stele.myplaces;
 
-import android.app.ListActivity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -15,10 +13,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-
-import rs.elfak.mosis.stele.myplaces.Classes.MyPlace;
-import rs.elfak.mosis.stele.myplaces.Classes.MyPlacesData;
+import rs.elfak.mosis.stele.myplaces.classes.MyPlace;
+import rs.elfak.mosis.stele.myplaces.classes.MyPlacesData;
 
 public class MyPlacesList extends AppCompatActivity implements View.OnCreateContextMenuListener {
 

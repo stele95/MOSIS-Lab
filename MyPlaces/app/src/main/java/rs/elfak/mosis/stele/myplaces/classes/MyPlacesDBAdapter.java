@@ -1,4 +1,4 @@
-package rs.elfak.mosis.stele.myplaces.Classes;
+package rs.elfak.mosis.stele.myplaces.classes;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -9,6 +9,8 @@ import android.database.sqlite.SQLiteException;
 import android.util.Log;
 
 import java.util.ArrayList;
+
+import static android.content.ContentValues.TAG;
 
 public class MyPlacesDBAdapter {
     public static final String DATABASE_NAME = "MyPlacesDB";
@@ -33,6 +35,7 @@ public class MyPlacesDBAdapter {
     public MyPlacesDBAdapter open() throws SQLException
     {
         db = dbHelper.getWritableDatabase();
+        //Log.e("db u open", db.toString());
         return this;
     }
 

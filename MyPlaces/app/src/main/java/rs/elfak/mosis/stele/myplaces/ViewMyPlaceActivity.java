@@ -6,8 +6,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import rs.elfak.mosis.stele.myplaces.Classes.MyPlace;
-import rs.elfak.mosis.stele.myplaces.Classes.MyPlacesData;
+import rs.elfak.mosis.stele.myplaces.classes.MyPlace;
+import rs.elfak.mosis.stele.myplaces.classes.MyPlacesData;
 
 public class ViewMyPlaceActivity extends AppCompatActivity {
 

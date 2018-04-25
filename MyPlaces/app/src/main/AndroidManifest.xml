@@ -3,7 +3,7 @@
     package="rs.elfak.mosis.stele.myplaces">
 
     <application
-        android:name=".Classes.MyPlacesApplication"
+        android:name=".classes.MyPlacesApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -22,7 +22,7 @@
             android:theme="@style/Theme.AppCompat.Light.Dialog" />
         <activity android:name=".MyPlacesList" />
         <activity android:name=".EditMyPlaceActivity" />
-        <activity android:name=".ViewMyPlaceActivity"></activity>
+        <activity android:name=".ViewMyPlaceActivity"/>
     </application>
 
 </manifest>

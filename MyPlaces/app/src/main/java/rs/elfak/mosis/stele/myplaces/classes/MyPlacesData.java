@@ -1,4 +1,6 @@
-package rs.elfak.mosis.stele.myplaces.Classes;
+package rs.elfak.mosis.stele.myplaces.classes;
+
+import android.util.Log;
 
 import java.util.ArrayList;
 
@@ -11,10 +13,14 @@ public class MyPlacesData {
     public MyPlacesData() {
         myPlaces=new ArrayList<>();
 
+        //Log.e("myplacesdata", "kreiranje......");
+
         dbAdapter = new MyPlacesDBAdapter(MyPlacesApplication.getContext());
         dbAdapter.open();
         this.myPlaces=dbAdapter.getAllEntries();
         dbAdapter.close();
+
+
     }
 
     private static class SingletonHolder{

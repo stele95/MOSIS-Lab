@@ -1,4 +1,4 @@
-package rs.elfak.mosis.stele.myplaces.Classes;
+package rs.elfak.mosis.stele.myplaces.classes;
 
 import android.app.Application;
 import android.content.Context;

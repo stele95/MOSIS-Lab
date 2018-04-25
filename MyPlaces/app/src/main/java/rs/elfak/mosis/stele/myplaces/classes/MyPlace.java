@@ -1,4 +1,4 @@
-package rs.elfak.mosis.stele.myplaces.Classes;
+package rs.elfak.mosis.stele.myplaces.classes;
 
 public class MyPlace {
     private String name;
