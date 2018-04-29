@@ -1,5 +1,6 @@
 package rs.elfak.mosis.stele.myplaces;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -69,6 +70,9 @@ public class EditMyPlaceActivity extends AppCompatActivity implements View.OnCli
             desc.setText(place.getDescription());
 
         }
+
+        Button locBtn = findViewById(R.id.location_button_edit);
+        locBtn.setOnClickListener(this);
     }
 
     @Override
@@ -105,6 +109,12 @@ public class EditMyPlaceActivity extends AppCompatActivity implements View.OnCli
             case R.id.edit_cancel_button:
                 setResult(RESULT_CANCELED);
                 finish();
+                break;
+
+            case R.id.location_button_edit:
+                Intent i = new Intent(this, MyPlacesMapsActivity.class);
+                i.putExtra("state", MyPlacesMapsActivity.SELECT_COORDINATES);
+                startActivityForResult(i, 1111);
                 break;
         }
 
@@ -143,6 +153,30 @@ public class EditMyPlaceActivity extends AppCompatActivity implements View.OnCli
             default:
 
                 return super.onOptionsItemSelected(item);
+
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        try
+        {
+            if(resultCode == Activity.RESULT_OK && requestCode == 1111)
+            {
+                String lon = data.getExtras().getString("lon");
+                String lat = data.getExtras().getString("lat");
+
+                EditText lonText = findViewById(R.id.long_edit);
+                EditText latText = findViewById(R.id.lat_edit);
+
+                lonText.setText(lon);
+                latText.setText(lat);
+            }
+        }
+        catch (Exception ex)
+        {
 
         }
     }

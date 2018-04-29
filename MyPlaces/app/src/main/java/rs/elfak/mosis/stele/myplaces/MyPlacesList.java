@@ -49,6 +49,7 @@ public class MyPlacesList extends AppCompatActivity implements View.OnCreateCont
                 menu.add(0,1,1,"View place");
                 menu.add(0,2,2,"Edit place");
                 menu.add(0,3,3,"Delete place");
+                menu.add(0, 4, 4, "Show on map");
 
             }
         });
@@ -75,6 +76,14 @@ public class MyPlacesList extends AppCompatActivity implements View.OnCreateCont
             case 3:
                 MyPlacesData.getInstance().deletePlace(info.position);
                 setList();
+                break;
+            case 4:
+                intent = new Intent(this, MyPlacesMapsActivity.class);
+                intent.putExtra("state", MyPlacesMapsActivity.CENTER_PLACE_ON_MAP);
+                MyPlace place = MyPlacesData.getInstance().getPlace(info.position);
+                intent.putExtra("lon", place.getLongitude());
+                intent.putExtra("lat", place.getLatitude());
+                startActivityForResult(intent,2);
                 break;
         }
 
